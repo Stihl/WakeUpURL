@@ -20,7 +20,6 @@ class Timer:
     #Add timers special function so it can do something other than launch a webbrowser
         
 now = datetime.now().time()
-#make hours since start and start time variables and keep track of how long its been, this could be a good debugging tool.
 start_time = datetime.now()
 total_hours = 0
 timers = []
@@ -40,8 +39,8 @@ while alive:
             print("NOT DONE - TITLE - Hour ", timer.hour, ", Minute: ", timer.minute)
         else:
             print("Done")
-    #Make a string interpreter that tears out the minutes and seconds and makes a timer based on that.
-    #Also give this thing a UI with a text entry for the URL and a database so the timers aren't hardcoded
+    #Make a string interpreter parses out the time in hours, minutes, and seconds.
+    #Also give this thing a UI (event if its commandline) with a text entry for the URLs and times and a database so the timers aren't hardcoded, SQLite3 will do for now.
 
     if(now.hour == 23 and now.minute > 59):
         for timer in timers:
